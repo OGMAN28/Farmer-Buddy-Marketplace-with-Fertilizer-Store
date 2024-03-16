@@ -16,6 +16,7 @@ var userData = JSON.parse(localStorage.getItem("userData")) || [];
 
 function registerUser() {
     // Get the input values for registration
+    var regUser = document.getElementById("regUser").value
     var regUsername = document.getElementById("regUsername").value;
     var regEmail = document.getElementById("regEmail").value;
     var regPassword = document.getElementById("regPassword").value;
@@ -27,7 +28,7 @@ function registerUser() {
         alert("Username already exists. Please choose a different one.");
     } else {
         // Create a new user object and add it to the userData array
-        var newUser = { username: regUsername, email: regEmail, password: regPassword };
+        var newUser = {usercategory: regUser, username: regUsername, email: regEmail, password: regPassword };
         userData.push(newUser);
 
         // Save the updated userData array to localStorage
@@ -53,7 +54,15 @@ function validateLogin() {
         // Display a success message
         document.getElementById("errorMessage").textContent = "Login successful!";
         clearLoginForm();
-        window.location.href = "farmer-ui.html";
+        if(user.usercategory === "Farmer"){
+            window.location.href = "farmer-ui.html";
+        }
+        else if(user.usercategory === "Vendor"){
+            window.location.href = "vendor-ui.html";
+        }
+        else if(user.usercategory === "Expert"){
+            window.location.href = "expert-ui.html";
+        }
     } else {
         // Display an error message
         document.getElementById("errorMessage").textContent = "Invalid username or password. Please try again.";
