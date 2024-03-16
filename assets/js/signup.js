@@ -1,14 +1,14 @@
 
-        const signUpButton = document.getElementById('signUp');
+const signUpButton = document.getElementById('signUp');
 const signInButton = document.getElementById('signIn');
 const container = document.getElementById('container');
 
 signUpButton.addEventListener('click', () => {
-	container.classList.add("right-panel-active");
+    container.classList.add("right-panel-active");
 });
 
 signInButton.addEventListener('click', () => {
-	container.classList.remove("right-panel-active");
+    container.classList.remove("right-panel-active");
 });
 
 // Load user data from localStorage (if available)
@@ -35,7 +35,7 @@ function registerUser() {
 
         alert("Registration successful!");
         clearRegistrationForm();
-		container.classList.remove("right-panel-active");
+        container.classList.remove("right-panel-active");
     }
 }
 
@@ -53,7 +53,7 @@ function validateLogin() {
         // Display a success message
         document.getElementById("errorMessage").textContent = "Login successful!";
         clearLoginForm();
-		window.location.href = "index.html";
+        window.location.href = "farmer-ui.html";
     } else {
         // Display an error message
         document.getElementById("errorMessage").textContent = "Invalid username or password. Please try again.";
@@ -62,7 +62,7 @@ function validateLogin() {
 
 function clearRegistrationForm() {
     document.getElementById("regUsername").value = "";
-	document.getElementById("regEmail").value = "";
+    document.getElementById("regEmail").value = "";
     document.getElementById("regPassword").value = "";
 }
 
