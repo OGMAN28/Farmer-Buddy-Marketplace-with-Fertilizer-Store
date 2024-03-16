@@ -1,0 +1,54 @@
+{% extends 'layout.html' %} {% block body %}
+
+
+<section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+<div class="container text-center text-md-left" data-aos="fade-up" style="
+width: 350px;
+height: 50rem;
+margin: 0px auto;
+color: black;
+border-radius: 25px;
+padding: 10px 10px;
+font-weight: bold;
+">
+
+<!-- <div style="
+    width: 350px;
+    height: 50rem;
+    margin: 100px auto;
+    color: black;
+    border-radius: 25px;
+    padding: 10px 10px;
+    font-weight: bold;
+  "> -->
+
+  
+
+  <form style="display: flex; justify-content: space-between;" class="form-signin" method=post enctype=multipart/form-data>
+    <div style="display: flex; flex-direction: column;padding-right: 40px;">
+    <h2 class="h4 mb-3 font-weight-normal"><h1>Upload the image of the crop for disease detection.</h1></h2>
+    <input type="file" name="file" class="form-control-file" id="inputfile" onchange="preview_image(event)" style="background-color: rgb(14, 14, 13); color: yellow; border-radius: 20px;">
+    <br>
+    
+    <button class="btn btn-lg btn-primary btn-block" type="submit" style="font-weight: bold;">Predict</button>
+  </div>
+    <img id="output-image"  style="height: 300px;margin-top: 100px; margin-left: 40;"/>
+
+
+  </form>
+</div>
+</section>
+
+<script type="text/javascript">
+  function preview_image(event) {
+    var reader = new FileReader();
+    reader.onload = function () {
+      var output = document.getElementById('output-image')
+      output.src = reader.result;
+    }
+    reader.readAsDataURL(event.target.files[0]);
+  }
+</script>
+
+</div>
+{% endblock %}
