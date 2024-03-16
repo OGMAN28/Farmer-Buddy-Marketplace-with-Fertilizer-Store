@@ -236,3 +236,20 @@
   });
 
 })()
+
+function loadGoogleTranslate() {
+  new google.translate.TranslateElement({ pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Load Google Translate on page load
+  loadGoogleTranslate();
+
+  // Add event listener to handle language change
+  document.getElementById('languageSelect').addEventListener('change', function() {
+      var selectedLanguage = this.value;
+
+      // Change the Google Translate language
+      google.translate.TranslateElement({ pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, includedLanguages: selectedLanguage }, 'google_translate_element');
+  });
+});
