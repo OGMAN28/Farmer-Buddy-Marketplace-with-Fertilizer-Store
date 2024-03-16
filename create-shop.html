@@ -25,6 +25,7 @@
 
     <link href="assets/css/style.css" rel="stylesheet">
 
+
 </head>
 
 <body>
@@ -39,7 +40,7 @@
 
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a class="nav-link scrollto active" href="index.html">Home</a></li>
+                    <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
                     <li><a class="nav-link scrollto" href="#about">About</a></li>
                     <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
                     <li><a class="nav-link scrollto " href="signup.html">Login</a></li>
@@ -52,12 +53,16 @@
 
     <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
         <div class="container text-center text-md-left" data-aos="fade-up">
-            <form action="">
-                <h1>Upload the image of the crop for disease detection.</h1>
-                <h2><input type="file" name="" id=""
-                        style="background-color: rgb(14, 14, 13); color: yellow; border-radius: 20px;"></h2>
-                <h2><input type="submit" value="Upload"
-                        style="background-color: black; color: aliceblue; border-radius: 10px;"></h2>
+            <form style="display: flex; justify-content: center; align-items: center;" action="">
+                <div style="border: 1px solid black; width: 540px; border-radius: 20px; background-color: aliceblue; padding: 10px;">
+                    <h2 style="padding: 10px; margin-top: 54px;">
+                        <label for="shop-name" style="color: black;">Shop Name</label>
+                        <input style="border-radius: 10px;" type="text" name="" id=""><br><br>
+                        <label for="shop-name" style="color: black;">Shop Detail</label>
+                        <input style="border-radius: 10px;" type="text" name="" id="" placeholder="Description (optional)"><br><br>
+                        <input style="border-radius: 10px;" type="submit" value="Create Shop">
+                    </h2>
+                </div>  
             </form>
         </div>
     </section>
@@ -85,7 +90,7 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
-    <script src="assets/js/crop-disease-detection.js"></script>
+
 </body>
 
 </html>
