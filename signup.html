@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SignUp</title>
     <link href="assets/css/signup.css" rel="stylesheet">
 </head>
+
 <body>
     <div class="container" id="container">
         <div class="form-container sign-up-container">
             <form action="#">
                 <h1>Create Account</h1>
-                <div class="social-container">
-                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                <div class="user_category">
+                    <select name="cars" id="cars">
+                        <option value="Farmer">Farmer</option>
+                        <option value="Vendor">Vendor</option>
+                        <option value="Expert">Expert</option>
+                    </select>
                 </div>
-                <span>or use your email for registration</span>
-                <input type="text" placeholder="Username" id="regUsername" name="regUsername" required/>
-                <input type="email" placeholder="Email" id="regEmail" name="regEmail" required/>
-                <input type="password" placeholder="Password" id="regPassword" name="regPassword" required/>
+                <input type="text" placeholder="Username" id="regUsername" name="regUsername" required />
+                <input type="email" placeholder="Email" id="regEmail" name="regEmail" required />
+                <input type="password" placeholder="Password" id="regPassword" name="regPassword" required />
                 <button type="button" onclick="registerUser()">Sign Up</button>
             </form>
         </div>
@@ -32,14 +35,14 @@
                     <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
                 </div>
                 <span>or use your account</span>
-                <input type="text" placeholder="Username" id="username" name="username" required/>
-                <input type="password" placeholder="Password" id="password" name="password" required/>
+                <input type="text" placeholder="Username" id="username" name="username" required />
+                <input type="password" placeholder="Password" id="password" name="password" required />
                 <a href="#">Forgot your password?</a>
                 <button type="button" onclick="validateLogin()">Sign In</button>
                 <p id="errorMessage" style="color: red;"></p>
             </form>
         </div>
-        
+
         <div class="overlay-container">
             <div class="overlay">
                 <div class="overlay-panel overlay-left">
@@ -57,4 +60,5 @@
     </div>
     <script src="assets/js/signup.js"></script>
 </body>
+
 </html>
