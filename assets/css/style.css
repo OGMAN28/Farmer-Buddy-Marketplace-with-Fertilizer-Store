@@ -342,10 +342,10 @@ section {
 
 .shop-component {
   border: 1px solid white#ccc;
-  margin-bottom: 10px;
+  margin: 10px;
   padding: 10px;
-  background-color: #f9f9f9;
-  width: 300px; 
+  background-color: mediumspringgreen;
+  width: 500px; 
 }
 
 .shop-name {
