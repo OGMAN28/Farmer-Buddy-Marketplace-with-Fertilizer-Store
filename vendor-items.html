@@ -25,6 +25,13 @@
 
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <style>
+    #map {
+      /* height: 100%; */
+      background-color: grey;
+    }
+    </style>
+
 
 </head>
 
@@ -52,11 +59,11 @@
     </div>
   </header>
 
-  <section style="margin-top: 0; ;" id="hero">
+  <section style="display: flex; margin-top: 0; ;" id="hero">
     <div style="display: flex; flex-direction: column; align-items: center; margin: 10px; width: 50%;  height: 580px; overflow-y: scroll; position: relative;" id="shop-container" class="shop-container" >
       
     </div>
-    <div class="map">
+    <div style="width: 50%; margin: 10px;" id="map">
 
     </div>
   </section>
@@ -85,8 +92,72 @@
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
+  <script>
+
+    let pos;
+    let map;
+    let bounds;
+    let infoWindow;
+    let currentInfoWindow;
+    let service;
+    let infoPane;
+    function initMap() {
+      bounds = new google.maps.LatLngBounds();
+      infoWindow = new google.maps.InfoWindow;
+      currentInfoWindow = infoWindow;
+  
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(position => {
+          pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+          map = new google.maps.Map(document.getElementById('map'), {
+            center: pos,
+            zoom: 15
+          });
+          bounds.extend(pos);
+  
+          infoWindow.setPosition(pos);
+          infoWindow.setContent('Location found.');
+          infoWindow.open(map);
+          map.setCenter(pos);
+  
+          /* TODO: Step 3B2, Call the Places Nearby Search */
+        }, () => {
+          // Browser supports geolocation, but user has denied permission
+          handleLocationError(true, infoWindow);
+        });
+      } else {
+        // Browser doesn't support geolocation
+        handleLocationError(false, infoWindow);
+      }
+    }
+  
+    // Handle a geolocation error
+    function handleLocationError(browserHasGeolocation, infoWindow) {
+      // Set default location to Sydney, Australia
+      pos = { lat: -33.856, lng: 151.215 };
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: pos,
+        zoom: 15
+      });
+  
+      // Display an InfoWindow at the map center
+      infoWindow.setPosition(pos);
+      infoWindow.setContent(browserHasGeolocation ?
+        'Geolocation permissions denied. Using default location.' :
+        'Error: Your browser doesn\'t support geolocation.');
+      infoWindow.open(map);
+      currentInfoWindow = infoWindow;
+    }
+  
+  </script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/vendor-items.js"></script>
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCotyCD6ISXz8ioDr_ElOUozY3yQhw_mUA&callback=initMap">
+  </script>
 
 </body>
 
