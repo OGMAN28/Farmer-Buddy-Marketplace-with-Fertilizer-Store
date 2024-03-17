@@ -57,12 +57,24 @@
                 <div
                     style="border: 1px solid black; width: 540px; border-radius: 20px; background-color: aliceblue; padding: 10px;">
                     <h2 style="padding: 10px; margin-top: 54px;">
-                        <label for="shop-name" style="color: black;">Shop Name</label>
-                        <input style="border-radius: 10px;" type="text" name="" id=""><br><br>
-                        <label for="shop-name" style="color: black;">Shop Detail</label>
-                        <input style="border-radius: 10px;" type="text" name="" id=""
-                            placeholder="Description (optional)"><br><br>
-                        <input style="border-radius: 10px;" type="submit" value="Create Shop">
+                        <div style="display: flex; justify-content: space-between;">
+                            <label for="shop-name" style="color: black;">Shop Name</label>
+                            <input style="border-radius: 10px;" type="text" name="shop-name" id="shop-name">
+                        </div><br><br>
+                        <div style="display: flex; justify-content: space-between;"><label for="shop-ph"
+                                style="color: black;">Shop Phone</label>
+                            <input style="border-radius: 10px;" type="text" name="shop-ph" id="shop-ph">
+                        </div><br><br>
+                        <div style="display: flex; justify-content: space-between;"><label for="shop-loc"
+                                style="color: black;">Shop Location</label>
+                            <input style="border-radius: 10px;" type="text" name="shop-loc" id="shop-loc">
+                        </div><br><br>
+                        <div style="display: flex; justify-content: space-between;"><label for="shop-det"
+                                style="color: black;">Shop Detail</label>
+                            <input style="border-radius: 10px;" type="text" name="shop-det" id="shop-det"
+                                placeholder="Description (optional)">
+                        </div><br><br>
+                        <button style="border-radius: 10px;" id="create-shop" onclick="createShop()">Create Shop</button>
                     </h2>
                 </div>
             </form>
@@ -71,18 +83,19 @@
 
     <footer id="footer">
         <div class="copyright">
-          &copy; Copyright <strong><span>Farmer Buddy</span></strong>. All Rights Reserved
+            &copy; Copyright <strong><span>Farmer Buddy</span></strong>. All Rights Reserved
         </div>
         <div class="social-links">
-          <a style="padding-left: 10px;" href="https://www.twitter.com" class="twitter"><i class="bx bxl-twitter"></i></a>
-          <a style="padding-left: 10px;" href="https://www.facebook.com" class="facebook"><i
-              class="bx bxl-facebook"></i></a>
-          <a style="padding-left: 10px;" href="https://www.instagram.com" class="instagram"><i
-              class="bx bxl-instagram"></i></a>
-          <a style="padding-left: 10px;" href="https://www.linkedin.com" class="linkedin"><i
-              class="bx bxl-linkedin"></i></a>
+            <a style="padding-left: 10px;" href="https://www.twitter.com" class="twitter"><i
+                    class="bx bxl-twitter"></i></a>
+            <a style="padding-left: 10px;" href="https://www.facebook.com" class="facebook"><i
+                    class="bx bxl-facebook"></i></a>
+            <a style="padding-left: 10px;" href="https://www.instagram.com" class="instagram"><i
+                    class="bx bxl-instagram"></i></a>
+            <a style="padding-left: 10px;" href="https://www.linkedin.com" class="linkedin"><i
+                    class="bx bxl-linkedin"></i></a>
         </div>
-      </footer>
+    </footer>
 
     <!-- Vendor JS Files -->
     <script src="assets/vendor/aos/aos.js"></script>
@@ -94,6 +107,7 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/create-shop.js"></script>
 
 </body>
 
